@@ -32,21 +32,21 @@ public class Matrix{
 		
 		for (int m = 0; m < matrix.height(); m++) {
 			for (int n = 0; n < matrix.width(); n++) {
-				multipliedMatrix.array[m][n] = new BigDecimal(matrix.array[m][n]).multiply(scalar).doubleValue();
+				multipliedMatrix.array[m][n] = BigDecimal.valueOf(matrix.array[m][n]).multiply(scalar).doubleValue();
 			}
 		}
 		
 		return multipliedMatrix;
 	}
 	public static Matrix multiply(Matrix matrix, double scalar){
-		return multiply(matrix, new BigDecimal(scalar));
+		return multiply(matrix, BigDecimal.valueOf(scalar));
 	}
 	public Matrix multiply(double scalar){
 		return multiply(this, scalar);
 	}
 	
 	public static Matrix divide(Matrix matrix, double scalar){
-		return multiply(matrix, BigDecimal.ONE.divide(new BigDecimal(scalar)));
+		return multiply(matrix, BigDecimal.ONE.divide(BigDecimal.valueOf(scalar)));
 	}
 	public Matrix divide(double scalar){
 		return divide(this,scalar);
