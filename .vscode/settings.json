@@ -2,5 +2,8 @@
 	"java.project.referencedLibraries": [
 		"lib/**/*.jar",
 		"e:\\Documents\\code_projects\\java\\Libraries\\junit5-main\\junit-platform-console-standalone\\build\\libs\\junit-platform-console-standalone-1.8.0-SNAPSHOT.jar"
+	],
+	"java.project.sourcePaths": [
+		"src"
 	]
 }
