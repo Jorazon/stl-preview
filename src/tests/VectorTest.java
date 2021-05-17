@@ -2,11 +2,14 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import math.vectors.*;
 
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class VectorTest {
 	
 	static final double DELTA = 0.0000001;
@@ -57,7 +60,7 @@ public class VectorTest {
 	}
 	
 	@Test
-	@DisplayName("Vector product")
+	@DisplayName("Vector scaling")
 	public void multiplyTest(){
 		
 		expected = new Vector3D(3, 0, 0);
@@ -66,8 +69,38 @@ public class VectorTest {
 	}
 	
 	@Test
-	@DisplayName("Dot product")
-	public void dotTest(){
+	@DisplayName("Dot product for parallel vectors")
+	public void dotParallelTest(){
+		
+		vector1 = new Vector3D(1, 0, 0);
+		vector2 = new Vector3D(3, 0, 0);
+		
+		assertEquals(3, vector1.dot(vector2), DELTA);
+	}
+	
+	@Test
+	@DisplayName("Dot product for antiparallel vectors")
+	public void dotAntiparallelTest(){
+		
+		vector1 = new Vector3D(1, 0, 0);
+		vector2 = new Vector3D(-1, 0, 0);
+		
+		assertEquals(-1, vector1.dot(vector2), DELTA);
+	}
+	
+	@Test
+	@DisplayName("Dot product for perpendicular vectors")
+	public void dotPerpendicularTest(){
+		
+		vector1 = new Vector3D(1, 0, 0);
+		vector2 = new Vector3D(0, 1, 0);
+		
+		assertEquals(0, vector1.dot(vector2), DELTA);
+	}
+	
+	@Test
+	@DisplayName("Dot product for complicated vectors")
+	public void dotComplexTest(){
 		
 		vector1 = new Vector3D(2, 7, 1);
 		vector2 = new Vector3D(8, 2, 8);
