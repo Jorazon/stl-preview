@@ -9,7 +9,7 @@ import math.vectors.*;
 
 public class VectorTest {
 	
-	final double DELTA = 0.000000000000001;
+	static final double DELTA = 0.0000001;
 	
 	Vector3D vector1 = new Vector3D(1, 0, 0);
 	Vector3D vector2 = new Vector3D(0, 1, 0);
@@ -74,23 +74,4 @@ public class VectorTest {
 		
 		assertEquals(38, vector1.dot(vector2), DELTA);
 	}
-		/*
-		vector1 = new Vector3D(1, 1, 0);
-		
-		System.out.println("length");
-		System.out.println(vector1.length());
-		
-		System.out.println("normalize");
-		System.out.println(vector1.normalize());
-		
-		System.out.println("multiply");
-		
-		System.out.println(vector1.multiply(3));
-		System.out.println("add");
-		System.out.println(vector1.add(vector2));
-		
-		
-		System.out.println("dot");
-		System.out.println(Vector.dot(vector1,vector2));
-		*/
 }
