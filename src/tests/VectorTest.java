@@ -16,6 +16,7 @@ public class VectorTest {
 	
 	Vector3D vector1 = new Vector3D(1, 0, 0);
 	Vector3D vector2 = new Vector3D(0, 1, 0);
+	Vector3D vector3 = new Vector3D(1, 1, 0);
 	Vector3D expected;
 	
 	@Test
@@ -31,21 +32,19 @@ public class VectorTest {
 	@DisplayName("Angle")
 	public void angleTest(){
 		
-		assertEquals(1.5707963267948966, vector1.angle(vector2), DELTA);
+		assertEquals(1.57079632679, vector1.angle(vector2), DELTA);
 	}
 	
 	@Test
 	@DisplayName("Length")
 	public void lengthTest(){
 		
-		assertEquals(1.5707963267948966, vector1.angle(vector2), DELTA);
+		assertEquals(1.41421356237, vector3.length(), DELTA);
 	}
 	
 	@Test
 	@DisplayName("Normalize")
 	public void normalizeTest(){
-		
-		Vector3D vector3 = new Vector3D(1, 1, 0);
 		
 		assertEquals(1, vector3.normalize().length(), DELTA);
 	}
