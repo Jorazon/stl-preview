@@ -99,7 +99,7 @@ public class Vector{
 	@Override
 	public boolean equals(Object object){
 		if (object == this) return true;
-		if (object == null || this.getClass() != object.getClass()) return false;
+		if (!(object instanceof Vector)) return false;
 		Vector vectorObject = (Vector)object;
 		return Arrays.equals(array, vectorObject.array);
 	}
