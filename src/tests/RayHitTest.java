@@ -28,8 +28,7 @@ public class RayHitTest {
 	void rayTriangleIntersectTest(){
 		ray = new Ray(
 			new Vector3D(0, 0, 0),
-			new Vector3D(0, 0, 1),
-			100);
+			new Vector3D(0, 0, 1));
 		
 		RayHit hit = RayHit.rayTriangleIntersect(ray, tri);
 		Vector3D expected = new Vector3D(0, 0, 3);
@@ -42,8 +41,7 @@ public class RayHitTest {
 	void rayTriangleNoIntersectTest(){
 		ray = new Ray(
 			new Vector3D(0, 0, 0),
-			new Vector3D(0, 0,-1),
-			100);
+			new Vector3D(0, 0,-1));
 		
 		RayHit hit = RayHit.rayTriangleIntersect(ray, tri);
 		
@@ -55,8 +53,7 @@ public class RayHitTest {
 	void rayTriangleParallelIntersectTest(){
 		ray = new Ray(
 			new Vector3D(0, 0, 0),
-			new Vector3D(1, 1, 0),
-			100);
+			new Vector3D(1, 1, 0));
 		
 		RayHit hit = RayHit.rayTriangleIntersect(ray, tri);
 		

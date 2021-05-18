@@ -6,12 +6,10 @@ public class Ray {
 	
 	private Vector3D origin;
 	private Vector3D direction;
-	private double length;
 	
-	public Ray(Vector3D origin, Vector3D direction, double length) {
+	public Ray(Vector3D origin, Vector3D direction) {
 		this.origin = origin;
 		this.direction = new Vector3D(direction.normalize());
-		this.length = length;
 	}
 	
 	public Vector3D origin() {
@@ -19,8 +17,5 @@ public class Ray {
 	}
 	public Vector3D direction() {
 		return this.direction;
-	}
-	public double length() {
-		return this.length;
 	}
 }
