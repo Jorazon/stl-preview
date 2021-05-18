@@ -17,8 +17,23 @@ public class Vector3D extends Vector {
 	public Vector3D(Vector2D vector2d, double z){
 		super(new double[]{vector2d.x(), vector2d.y(), z});
 	}
+	public Vector3D(Vector vector){
+		super(padTo3(vector.array));
+	}
 	
-	public static Vector3D cross(Vector3D vectorA, Vector3D vectorB){
+	private static double[] padTo3(double[] array){
+		double[] newArray = new double[3];
+		for (int i = 0; i < newArray.length; i++) {
+			newArray[i] = i < array.length ? array[i] : 0;
+		}
+		return newArray;
+	}
+	
+	public static Vector3D cross(Vector vectorA, Vector vectorB){
+		
+		if (vectorA.dimension() != 3 || vectorB.dimension() != 3){
+			throw new IllegalArgumentException("Vector(s) are not Vector3D");
+		}
 		
 		Matrix matrix = new Matrix(new double[][]{{1,1,1},vectorA.array,vectorB.array});
 		

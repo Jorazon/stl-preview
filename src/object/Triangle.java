@@ -21,10 +21,10 @@ public class Triangle {
 	 * @return Calculated normal direction for triangle
 	 */
 	public Vector3D calculateNormal(){
-		return (Vector3D)Vector3D.cross(
-			(Vector3D)verts[1].subtract(verts[0]),
-			(Vector3D)verts[2].subtract(verts[0])
-		).normalize();
+		return new Vector3D(Vector3D.cross(
+			verts[1].subtract(verts[0]),
+			verts[2].subtract(verts[0])
+		).normalize());
 	}
 	
 	public Vector3D normal(){
