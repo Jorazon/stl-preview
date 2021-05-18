@@ -86,6 +86,13 @@ public class Vector{
 		return toMatrix(this);
 	}
 	
+	public static double distance(Vector vectorA, Vector vectorB){
+		return vectorA.subtract(vectorB).length();
+	}
+	public double distance(Vector vector){
+		return distance(this, vector);
+	}
+	
 	@Override
 	public String toString(){
 		return toMatrix().toString();
