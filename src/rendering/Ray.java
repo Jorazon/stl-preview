@@ -1,4 +1,4 @@
-package camera;
+package rendering;
 
 import math.vectors.Vector3D;
 

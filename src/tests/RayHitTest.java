@@ -8,10 +8,10 @@ import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-import camera.Ray;
-import camera.RayHit;
 import math.vectors.Vector3D;
 import object.Triangle;
+import rendering.Ray;
+import rendering.RayHit;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class RayHitTest {
