@@ -4,7 +4,7 @@ import math.vectors.Vector3D;
 
 public class Light {
 	
-	private static final double PI = math.Utils.PI;.
+	private static final double PI = math.Utils.PI;
 	
 	private Vector3D position;
 	private Vector3D color;
