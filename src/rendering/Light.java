@@ -3,6 +3,9 @@ package rendering;
 import math.vectors.Vector3D;
 
 public class Light {
+	
+	private static final double PI = math.Utils.PI;.
+	
 	private Vector3D position;
 	private Vector3D color;
 	private double strength;
@@ -30,7 +33,7 @@ public class Light {
 			intensity = strength;
 		}
 		else {
-			intensity = strength * (1 / distance);
+			intensity = strength * (1 / (4 * PI * distance * distance));
 		}
 		
 		return new Vector3D(color.multiply(intensity));
