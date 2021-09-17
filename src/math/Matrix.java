@@ -74,13 +74,13 @@ public class Matrix{
 			throw new IllegalArgumentException("Vectors are not the same dimension");
 		}
 		
-		double product = 0;
+		double productsum = 0;
 		
 		for (int i = 0; i < vectorA.length; i++) {
-			product += vectorA[i] * vectorB[i];
+			productsum += vectorA[i] * vectorB[i];
 		}
 		
-		return product;
+		return productsum;
 	}
 	
 	public static Matrix multiply(Matrix matrixA, Matrix matrixB){
@@ -91,11 +91,11 @@ public class Matrix{
 		
 		Matrix multipliedMatrix = new Matrix(matrixA.height(), matrixB.width());
 		
-		Matrix BT = matrixB.transpose();
+		Matrix bt = matrixB.transpose();
 		
 		for (int a = 0; a < matrixA.height(); a++) {
-			for (int b = 0; b < BT.height(); b++) {
-				multipliedMatrix.array[a][b] = dot(matrixA.array[a], BT.array[b]);
+			for (int b = 0; b < bt.height(); b++) {
+				multipliedMatrix.array[a][b] = dot(matrixA.array[a], bt.array[b]);
 			}
 		}
 		
